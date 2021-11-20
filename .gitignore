@@ -10,3 +10,8 @@
 /.classpath
 /*.ipr
 /*.iws
+.gradle/
+.vscode/
+bin/
+build/
+gradlehtmlReports/

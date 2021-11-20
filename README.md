@@ -1,10 +1,17 @@
-STConvert Analysis for Elasticsearch
-==================================
+STConvert Analysis for OpenSearch
+=================================
 
 STConvert is analyzer that convert Chinese characters between Traditional and Simplified.
-[中文简繁體转换][简体到繁体][繁体到简体][简繁查询Expand]
+[中文简繁體转换][简体到繁体][繁体到简体][简繁查询Expand].
 
-You can download the pre-build package from [release page](https://github.com/medcl/elasticsearch-analysis-stconvert/releases)
+
+## Installation
+
+| OS    | Command |
+| ----- | ------- |
+| 1.1.0  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/1.1.0/opensearch-analisys-stconvert-1.1.0.zip` |
+
+## Usage
 
 The plugin includes  analyzer: `stconvert`,
  tokenizer: `stconvert`,

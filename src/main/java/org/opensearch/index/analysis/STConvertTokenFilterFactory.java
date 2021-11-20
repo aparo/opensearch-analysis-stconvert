@@ -1,9 +1,4 @@
-package org.elasticsearch.index.analysis;
-
-import org.apache.lucene.analysis.Tokenizer;
-import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.env.Environment;
-import org.elasticsearch.index.IndexSettings;
+package org.opensearch.index.analysis;
 
 /**
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -21,31 +16,32 @@ import org.elasticsearch.index.IndexSettings;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import org.apache.lucene.analysis.TokenStream;
+import org.opensearch.common.settings.Settings;
+import org.opensearch.env.Environment;
+import org.opensearch.index.IndexSettings;
 
-public class STConvertTokenizerFactory extends AbstractTokenizerFactory {
 
-   private String type="t2s";
-   private String delimiter=",";
+public class STConvertTokenFilterFactory extends AbstractTokenFilterFactory {
+    private String delimiter=",";
+    private String type="t2s";
     private Boolean keepBoth=false;
 
-    public STConvertTokenizerFactory(IndexSettings indexSettings, Environment env, String name, Settings settings) {
-        super(indexSettings, settings, name);
-         type = settings.get("convert_type", "s2t");
-         delimiter = settings.get("delimiter", ",");
-         String keepBothStr = settings.get("keep_both", "false");
+    public STConvertTokenFilterFactory(IndexSettings indexSettings, Environment env, String name, Settings settings) {
+        super(indexSettings, name, settings);
+        type = settings.get("convert_type", "s2t");
+        delimiter = settings.get("delimiter", ",");
+        String keepBothStr = settings.get("keep_both", "false");
         if(keepBothStr.equals("true")) {
-             keepBoth = true;
+            keepBoth = true;
         }
     }
 
-    @Override
-    public Tokenizer create() {
+    @Override public TokenStream create(TokenStream tokenStream) {
         STConvertType convertType= STConvertType.SIMPLE_2_TRADITIONAL;
         if(type.equals("t2s")){
             convertType = STConvertType.TRADITIONAL_2_SIMPLE;
         }
-
-        return new STConvertTokenizer(convertType, delimiter,keepBoth);
+        return new STConvertTokenFilter(tokenStream,convertType,delimiter,keepBoth);
     }
 }
-

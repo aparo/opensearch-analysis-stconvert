@@ -1,4 +1,4 @@
-package org.elasticsearch.index.analysis;
+package org.opensearch.index.analysis;
 
 public enum STConvertType {
     SIMPLE_2_TRADITIONAL,

@@ -1,10 +1,10 @@
-package org.elasticsearch.plugin.analysis.stconvert;
+package org.opensearch.plugin.analysis.stconvert;
 
 import org.apache.lucene.analysis.Analyzer;
-import org.elasticsearch.index.analysis.*;
-import org.elasticsearch.indices.analysis.AnalysisModule;
-import org.elasticsearch.plugins.AnalysisPlugin;
-import org.elasticsearch.plugins.Plugin;
+import org.opensearch.index.analysis.*;
+import org.opensearch.indices.analysis.AnalysisModule;
+import org.opensearch.plugins.AnalysisPlugin;
+import org.opensearch.plugins.Plugin;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,8 +29,8 @@ public class AnalysisSTConvertPlugin extends Plugin implements AnalysisPlugin {
     }
 
     @Override
-    public Map<String, AnalysisModule.AnalysisProvider<org.elasticsearch.index.analysis.TokenFilterFactory>> getTokenFilters() {
-        Map<String, AnalysisModule.AnalysisProvider<org.elasticsearch.index.analysis.TokenFilterFactory>> extra = new HashMap<>();
+    public Map<String, AnalysisModule.AnalysisProvider<org.opensearch.index.analysis.TokenFilterFactory>> getTokenFilters() {
+        Map<String, AnalysisModule.AnalysisProvider<org.opensearch.index.analysis.TokenFilterFactory>> extra = new HashMap<>();
         extra.put("stconvert", STConvertTokenFilterFactory::new);
         return extra;
     }
