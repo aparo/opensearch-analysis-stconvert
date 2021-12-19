@@ -44,7 +44,7 @@ opensearchplugin {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-  runtimeOnly 'org.apache.logging.log4j:log4j-api:2.11.1'
+  runtimeOnly 'org.apache.logging.log4j:log4j-api:2.16.0'
 }
 
 // ignore javadoc warnings for now
