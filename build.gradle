@@ -68,7 +68,7 @@ githubRelease.doFirst {
   // configuration
   github {
     owner = 'aparo'
-    repo = 'opensearch-analisys-stconvert'
+    repo = 'opensearch-analysis-stconvert'
     token = System.getProperty('GITHUB_TOKEN')
     tagName = currentVersion
     assets = [ filename ]
