@@ -90,6 +90,9 @@ test {
 
 filepermissions.enabled = false
 
+// This requires an additional Jar not published as part of build-tools
+loggerUsageCheck.enabled = false
+
 // // setup yaml rest tests
 // testClusters {
 //   yamlRestTest
