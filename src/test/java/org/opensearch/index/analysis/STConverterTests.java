@@ -19,14 +19,14 @@
 package org.opensearch.index.analysis;
 
 import junit.framework.Assert;
-import junit.framework.TestCase;
+import org.apache.lucene.tests.util.LuceneTestCase;
 
 /**
  * User: Medcl
  * Date: 12-10-28
  * Time: 上午8:44
  */
-public class STConverterTest extends TestCase {
+public class STConverterTests extends LuceneTestCase {
     public void testConvert() throws Exception {
 
         STConverter stConverter=new STConverter();
