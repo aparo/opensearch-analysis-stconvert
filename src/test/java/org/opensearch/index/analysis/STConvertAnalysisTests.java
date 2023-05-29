@@ -46,7 +46,6 @@ public class STConvertAnalysisTests {
         while (filter.incrementToken()) {
             CharTermAttribute ta = filter.getAttribute(CharTermAttribute.class);
             list.add(ta.toString());
-            System.out.println(ta.toString());
         }
         Assert.assertEquals(3, list.size());
         Assert.assertEquals("劉,刘", list.get(0));
@@ -61,7 +60,6 @@ public class STConvertAnalysisTests {
         while (filter.incrementToken()) {
             CharTermAttribute ta = filter.getAttribute(CharTermAttribute.class);
             list.add(ta.toString());
-            System.out.println(ta.toString());
         }
         Assert.assertEquals(1, list.size());
         Assert.assertEquals("劉德華", list.get(0));
@@ -73,7 +71,6 @@ public class STConvertAnalysisTests {
         List<String> list = new ArrayList<String>();
 
         for (String value : s) {
-            System.out.println(value);
             StringReader sr = new StringReader(value);
 
             STConvertTokenizer tokenizer = new STConvertTokenizer(STConvertType.TRADITIONAL_2_SIMPLE, ",", true);
@@ -85,7 +82,6 @@ public class STConvertAnalysisTests {
 
                 CharTermAttribute ta = tokenizer.getAttribute(CharTermAttribute.class);
 
-                System.out.println(ta.toString());
                 list.add(ta.toString());
                 hasnext = tokenizer.incrementToken();
 
