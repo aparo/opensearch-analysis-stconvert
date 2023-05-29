@@ -20,11 +20,11 @@
 package org.opensearch.index.analysis;
 
 import junit.framework.Assert;
+import junit.framework.TestCase;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.core.KeywordAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.junit.Test;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -33,10 +33,9 @@ import java.util.List;
 
 /**
  */
-public class STConvertAnalysisTests {
+public class STConvertAnalysisTests extends TestCase {
 
 
-    @Test
     public void testTokenFilter() throws IOException {
         StringReader sr = new StringReader("刘德华");
         Analyzer analyzer = new StandardAnalyzer();
@@ -65,7 +64,6 @@ public class STConvertAnalysisTests {
         Assert.assertEquals("劉德華", list.get(0));
     }
 
-    @Test
     public void TestTokenizer() throws IOException {
         String[] s = {"刘德华", "劉德華"};
         List<String> list = new ArrayList<String>();
