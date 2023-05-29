@@ -88,6 +88,8 @@ test {
     reports.html.setDestination(file("$projectDir/gradlehtmlReports"))
 }
 
+filepermissions.enabled = false
+
 // // setup yaml rest tests
 // testClusters {
 //   yamlRestTest
