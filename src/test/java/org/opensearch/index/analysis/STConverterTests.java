@@ -18,7 +18,21 @@
  */
 package org.opensearch.index.analysis;
 
-public enum STConvertType {
-    SIMPLE_2_TRADITIONAL,
-    TRADITIONAL_2_SIMPLE,
+import junit.framework.Assert;
+import org.apache.lucene.tests.util.LuceneTestCase;
+
+/**
+ * User: Medcl
+ * Date: 12-10-28
+ * Time: 上午8:44
+ */
+public class STConverterTests extends LuceneTestCase {
+    public void testConvert() throws Exception {
+
+        STConverter stConverter=new STConverter();
+        String str= stConverter.convert(STConvertType.TRADITIONAL_2_SIMPLE,"先禮後兵");
+        String str1= stConverter.convert(STConvertType.SIMPLE_2_TRADITIONAL,"非诚勿扰");
+        Assert.assertEquals("先礼后兵",str);
+        Assert.assertEquals("非誠勿擾",str1);
+    }
 }

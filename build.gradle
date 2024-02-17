@@ -44,7 +44,7 @@ opensearchplugin {
 
 // In this section you declare the dependencies for your production and test code
 dependencies {
-  runtimeOnly 'org.apache.logging.log4j:log4j-api:2.17.0'
+  runtimeOnly 'org.apache.logging.log4j:log4j-api:2.17.1'
 }
 
 // ignore javadoc warnings for now
@@ -87,6 +87,14 @@ test {
     reports.html.enabled = true
     reports.html.setDestination(file("$projectDir/gradlehtmlReports"))
 }
+
+filepermissions.enabled = false
+
+// This requires an additional Jar not published as part of build-tools
+loggerUsageCheck.enabled = false
+
+// No need to validate pom, as we do not upload to maven/sonatype
+validateNebulaPom.enabled = false
 
 // // setup yaml rest tests
 // testClusters {

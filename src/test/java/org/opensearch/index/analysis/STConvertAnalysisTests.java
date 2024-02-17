@@ -24,7 +24,7 @@ import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.core.KeywordAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute;
-import org.junit.Test;
+import org.apache.lucene.tests.util.LuceneTestCase;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -33,10 +33,9 @@ import java.util.List;
 
 /**
  */
-public class STConvertAnalysisTests {
+public class STConvertAnalysisTests extends LuceneTestCase {
 
 
-    @Test
     public void testTokenFilter() throws IOException {
         StringReader sr = new StringReader("刘德华");
         Analyzer analyzer = new StandardAnalyzer();
@@ -46,7 +45,6 @@ public class STConvertAnalysisTests {
         while (filter.incrementToken()) {
             CharTermAttribute ta = filter.getAttribute(CharTermAttribute.class);
             list.add(ta.toString());
-            System.out.println(ta.toString());
         }
         Assert.assertEquals(3, list.size());
         Assert.assertEquals("劉,刘", list.get(0));
@@ -61,19 +59,16 @@ public class STConvertAnalysisTests {
         while (filter.incrementToken()) {
             CharTermAttribute ta = filter.getAttribute(CharTermAttribute.class);
             list.add(ta.toString());
-            System.out.println(ta.toString());
         }
         Assert.assertEquals(1, list.size());
         Assert.assertEquals("劉德華", list.get(0));
     }
 
-    @Test
     public void TestTokenizer() throws IOException {
         String[] s = {"刘德华", "劉德華"};
         List<String> list = new ArrayList<String>();
 
         for (String value : s) {
-            System.out.println(value);
             StringReader sr = new StringReader(value);
 
             STConvertTokenizer tokenizer = new STConvertTokenizer(STConvertType.TRADITIONAL_2_SIMPLE, ",", true);
@@ -85,7 +80,6 @@ public class STConvertAnalysisTests {
 
                 CharTermAttribute ta = tokenizer.getAttribute(CharTermAttribute.class);
 
-                System.out.println(ta.toString());
                 list.add(ta.toString());
                 hasnext = tokenizer.incrementToken();
 
