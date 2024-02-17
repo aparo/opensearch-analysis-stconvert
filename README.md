@@ -20,6 +20,12 @@ STConvert is analyzer that convert Chinese characters between Traditional and Si
 | 2.0.0  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.0.0/opensearch-analisys-stconvert-2.0.0.zip` |
 | 2.0.1  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.0.1/opensearch-analisys-stconvert-2.0.1.zip` |
 | 2.6.0  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.6.0/opensearch-analisys-stconvert-2.6.0.zip` |
+| 2.7.0  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.7.0/opensearch-analisys-stconvert.zip` |
+| 2.8.0  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.8.0/opensearch-analisys-stconvert.zip` |
+| 2.9.0  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.9.0/opensearch-analisys-stconvert.zip` |
+| 2.10.0  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.10.0/opensearch-analisys-stconvert.zip` |
+| 2.11.0  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.11.0/opensearch-analisys-stconvert.zip` |
+| 2.11.1  | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.11.1/opensearch-analisys-stconvert.zip` |
 
 ## Usage
 
