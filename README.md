@@ -35,6 +35,7 @@ STConvert is analyzer that convert Chinese characters between Traditional and Si
 | 2.19.0 | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.19.0/opensearch-analysis-stconvert.zip` |
 | 2.19.1 | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.19.1/opensearch-analysis-stconvert.zip` |
 | 2.19.2 | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/2.19.2/opensearch-analysis-stconvert.zip` |
+| 3.0.0 | `bin/opensearch-plugin install https://github.com/aparo/opensearch-analysis-stconvert/releases/download/3.0.0/opensearch-analysis-stconvert.zip` |
 
 ## Usage
 
