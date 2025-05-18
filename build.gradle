@@ -8,6 +8,7 @@ apply plugin: 'opensearch.pluginzip'
 
 def pluginName = 'opensearch-analysis-stconvert'
 def pluginDescription = 'STConvert is a analysis plugin that convert Chinese characters between traditional and simplified.'
+def pluginSmallDescription = 'Analisys STConvert plugin'
 def projectPath = 'org.opensearch'
 def pathToPlugin = 'plugin.analysis.stconvert'
 def pluginClassName = 'AnalysisSTConvertPlugin'
@@ -66,7 +67,7 @@ thirdPartyAudit.enabled = false
 
 buildscript {
     ext {
-        opensearch_version = System.getProperty("opensearch.version", "2.11.1")
+        opensearch_version = System.getProperty("opensearch.version", "2.12.0")
     }
 
     repositories {
